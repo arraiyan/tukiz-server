@@ -1,0 +1,85 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'homeapp/post.css'%}">
+    <script src="{%static 'homeapp/responsive.js'%}"></script>
+    <title>Create Post</title>
+</head>
+<body>
+    
+    <div class="caption">
+        <i>Create New Post</i>
+    </div>
+    <div class="DecorateText">
+                 
+        Decorate Text:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id='italic' onclick="bold('i')"><u>i</u></button>
+        <button type = "button" id='bold' onclick="bold('b')"><u>B</u></button>
+    </div>
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data" >
+            {%csrf_token%}
+             <div><input type="text" name="title" placeholder="   Enter Titel" required></div>
+             
+              
+
+                
+                <div>
+                <textarea name="body" id="body_textarea" cols="80" rows="17" placeholder="Enter your content ">
+              
+
+              </textarea>
+              </div>
+
+
+            <div class="input">
+                <div><button type="button" onclick="add_image('0')">add</button><input type="file" id='id_image' name='image0' /> </div>
+                <div><button type="button" onclick="add_image('1')">add</button><input type="file" id='id_image' name='image1' /></div>
+                <div><button type="button" onclick="add_image('2')">add</button><input type="file" id='id_image' name='image2' /> </div>
+                <div><button type="button" onclick="add_image('3')">add</button><input type="file" id='id_image' name='image3' /></div>
+                <div><button type="button" onclick="add_image('4')">add</button><input type="file" id='id_image' name='image4' /> </div>
+                <div><button type="button" onclick="add_image('5')">add</button><input type="file" id='id_image' name='image5' /></div>
+                <div><button type="button" onclick="add_image('6')">add</button><input type="file" id='id_image' name='image6' /></div> 
+                <div><button type="button" onclick="add_image('7')">add</button><input type="file" id='id_image' name='image7' /></div>
+                <div><button type="button" onclick="add_image('8')">add</button><input type="file" id='id_image' name='image8' /> </div>
+                <div><button type="button" onclick="add_image('9')">add</button><input type="file" id='id_image' name='image9' /></div>
+                <div><button type="button" onclick="add_image('10')">add</button><input type="file" id='id_image' name='image10' /> </div>
+                <div><button type="button" onclick="add_image('11')">add</button><input type="file" id='id_image' name='image11' /> </div>
+                <div><button type="button" onclick="add_image('12')">add</button><input type="file" id='id_image' name='image12' /> </div> 
+                <div><button type="button" onclick="add_image('13')">add</button><input type="file" id='id_image' name='image13' /></div>
+                <div><button type="button" onclick="add_image('14')">add</button><input type="file" id='id_image' name='image14' /></div> 
+                <div><button type="button" onclick="add_image('15')">add</button><input type="file" id='id_image' name='image15' /></div>
+                <div><button type="button" onclick="add_image('16')">add</button><input type="file" id='id_image' name='image16' /></div>
+                <div><button type="button" onclick="add_image('17')">add</button><input type="file" id='id_image' name='image17' /></div>
+                <div><button type="button" onclick="add_image('18')">add</button><input type="file" id='id_image' name='image18' /></div> 
+                <div><button type="button" onclick="add_image('19')">add</button><input type="file" id='id_image' name='image19' /></div>
+                <div><button type="button" onclick="add_image('20')">add</button><input type="file" id='id_image' name='image20' /></div> 
+                <div><button type="button" onclick="add_image('21')">add</button><input type="file" id='id_image' name='image21' /></div>
+                <div><button type="button" onclick="add_image('22')">add</button><input type="file" id='id_image' name='image22' /></div> 
+                <div><button type="button" onclick="add_image('23')">add</button><input type="file" id='id_image' name='image23' /></div>
+                <div><button type="button" onclick="add_image('24')">add</button><input type="file" id='id_image' name='image24' /> </div>
+                <div><button type="button" onclick="add_image('25')">add</button><input type="file" id='id_image' name='image25' /></div>
+                <div><button type="button" onclick="add_image('26')">add</button><input type="file" id='id_image' name='image26' /> </div>
+                <div><button type="button" onclick="add_image('27')">add</button><input type="file" id='id_image' name='image27' /> </div>
+                <div><button type="button" onclick="add_image('28')">add</button><input type="file" id='id_image' name='image28' /></div> 
+                <div><button type="button" onclick="add_image('29')">add</button><input type="file" id='id_image' name='image29' /></div>
+                <div><button type="button" onclick="add_image('30')">add</button><input type="file" id='id_image' name='image30' /></div> 
+                <div><button type="button" onclick="add_image('31')">add</button><input type="file" id='id_image' name='image31' /></div>
+                <div><button type="button" onclick="add_image('32')">add</button><input type="file" id='id_image' name='image32' /></div> 
+                <div><button type="button" onclick="add_image('33')">add</button><input type="file" id='id_image' name='image33' /></div>
+                <div><button type="button" onclick="add_image('34')">add</button><input type="file" id='id_image' name='image34' /></div>
+                <div><button type="button" onclick="add_image('35')">add</button><input type="file" id='id_image' name='image35' /></div>
+            </div>
+
+
+
+<button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

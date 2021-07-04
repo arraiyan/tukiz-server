@@ -1,0 +1,50 @@
+*{margin: 0;padding: 0;}
+body{background: rgb(236, 236, 236)}
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+.caption{
+    
+    text-align: center;
+}.caption i{color: black;
+    font-family: 'Candal', sans-serif;font-weight: bold;font-size: 2em;
+}
+
+.container{
+    background-color: #EBFFFB;
+    margin-bottom:0.5em;height: 90vh;width: 85.2vw;
+    border: 2px solid black;border-radius: 10px;
+    margin-left: 2.32em;
+}
+
+.container form div input[type=text]{
+    margin-left: 2em;margin-top: 3em;
+    width: 35vw;height: 2.67em;
+    border-radius: 5px;border:2px solid black;
+    
+
+}
+.container form div #body_textarea{
+    margin-left: 7em;margin-top: 5em;
+    
+    border-radius: 5px;border:2px solid black;
+    padding: 5px;
+    font-size: 13pt;
+    width: 40vw;
+    font-family: 'Candal', sans-serif;
+
+}
+ .DecorateText{
+    position: relative;left:8.5em;top:11.5vw;
+font-family: sans-serif;font-weight: bold;font-style: italic;
+}.DecorateText #italic{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;margin: 5px;font-style: italic;font-weight: bold;cursor: pointer;
+}.DecorateText #bold{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5em;margin: 5px;font-weight: bold;cursor: pointer;
+}
+.container form .input{
+    position: absolute; height: 30vw;background-color: #CFE4E8;
+    overflow-x: scroll;width: 25%;top: 12vw;left: 63vw;padding: 5px;border-radius: 12px; border: 2px solid black;
+}

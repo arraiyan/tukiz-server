@@ -1,0 +1,210 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta property="fb:app_id" content="488532302229028" />
+    <meta property="og:url" content="https://tuke.pythonanywhere.com/blog_view/?post_id={{data.post.id}}&class=blog_view" />
+    <meta property="og:image" content="https://tuke.pythonanywhere.com{{data.post.image.url}}" />
+
+    <meta name="google-site-verification" content="WrVcwoD2s1X47xe8pKobr7K4Qr6lda8IsvBDAeFyIvg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta name="keywords" content="{{data.post.title}}"/>
+    <meta name="description" content="{{data.post.meta_body}}">
+
+
+    <meta property="og:title" content="{{data.post.title}}" />
+    <meta property="og:url" content="https://tuke.pythonanywhere.com"/>
+    <meta property="og:description" content="{{data.post.meta_body}}"/>
+
+    <meta property="og:type" content="website"/>
+
+    <link rel="stylesheet" href="{%static 'homeapp/blog_view.css'%}">
+    <script src="https://kit.fontawesome.com/ee1e6a0caa.js" crossorigin="anonymous"></script>
+    <title>{{data.post.title}}</title>
+    <script src="{%static 'homeapp/responsive.js'%}"></script>
+    <script type="text/javascript">
+          function showcomment(){
+              var comment = document.getElementById('showmore');
+              comment.style.display='block';
+              buttonshowmore.style.display = 'none';
+          }              
+    </script>
+</head>
+<body>
+    
+    <header>
+        <nav class="navlist">
+            <div class="logo"><p style="color: rgb(255, 255, 255); display: inline;">  TU</p>
+               <sub>KIZ</sub>
+            </div>
+            <div class="list">
+                <li><a href="{%url 'home_page'%}">Home</a></li>
+                
+                <li><a href="{%url 'post_page'%}">Create post</a></li>
+                {%if not user.is_authenticated%}
+                <li><a href="{%url 'register'%}">SignUp</a></li>
+                {%endif%}
+            </div>
+            <div class="log">
+                <ul class="loglist">
+                    
+                    <li><a href="{%url 'post_page'%}">Create post</a></li>
+                    <li>F&Q</li>
+                    {%if not user.is_authenticated%}
+                    <li><a href="{%url 'login'%}">LogIn</a></li>
+                    {%else%}
+                    <li id="logout"><a href="{%url 'logout'%}" style="text-decoration: none; color: red; font-weight: bold;">LogOut</a></li>
+                    {%endif%}
+                </ul>
+            </div>
+            <div class="bars">
+               <button onclick="show_bar_item()" style="border:none;background-color: transparent;"><i class="fas fa-bars"></i></button> 
+               
+               <div id='sbar'>
+                    <div class="secondarylist">
+                        <button onclick="show_bar_item()" style="border:none;background-color: transparent;">
+                            <i class="fas fa-times" style="color: red;font-size: 30pt;"></i>
+                        </button>
+                        <div class="slist">
+                           <ul>
+                            <li class="a" style="margin-top: 0;"><a href="{%url 'logout'%}" >Logout</a></li>
+                            <li class="a"><a href="{%url 'home_page'%}">Home</a></li>
+                            <li class="a"><a href="{%url 'post_page'%}">Create post</a></li>
+                            <li><a href="">About us</a></li>
+                            <li><a href="{%url 'login'%}">Login</a></li>
+                            <li><a href="">F&Q</a></li>
+                            
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+               
+               
+            </div>
+            
+
+
+        </nav>
+    </header>
+    <div class="getstarted" >
+        
+        <a href="" style="font-family:cursive;font-size: 10pt;text-decoration:none;background-color:transparent;color: black;font-weight: bold;background: linear-gradient(40deg, #b2d8d6 10%, rgba(0, 240, 169, 0.978496) 86%);border-radius: 8px;padding: 2px;margin: 5px;position: relative;top:0.2cm;"> 
+            Get started</a>
+    </div>
+
+
+    <div class="sidenav1">
+
+    </div>
+      <div class="sidenav2">
+          <p><a href="">Home</a></p>
+          <br>
+      </div>
+
+
+      <div class="showcomment" style="z-index: 10;">
+        <button onclick="show_comment()">
+            <i class="fas fa-comment"></i>
+        </button>
+        
+      </div>
+
+      <div class="comment" id="comment">
+       
+        <div class="postcomment">
+            
+            <form action="" method="POST">
+                {%csrf_token%}
+                <input type="text" id="PC" name='body' placeholder="  ENTER COMMENT">
+                <input type="hidden" id="PC" name='class' value="comment">
+                <input type="hidden" id="PC" name='data' value="{{data.post.user.id}}">
+                <button type="submit"><i class="fas fa-location-arrow"></i></button>
+            </form>
+        </div>       
+              
+        <div class="close"style=""> 
+            <button onclick="show_comment()">
+             <i class="fas fa-times" style="color: red;font-size: 30pt; "></i>
+            </button>
+         </div> 
+        {% for i in data.comments%}
+        
+        
+        {%if not  i.comment.is_auth%}
+        <div class="visitor">
+            <div class="profileimage">
+                <img src="{{i.auth.profile.profile_image.url}}" alt="{{i.user}}">
+            </div>
+            <div class="commentbody">
+                {{i.comment.comment_body}} 
+            </div>
+        </div>
+        {%endif%}
+        {%if i.comment.is_auth%}
+        <div class="author">
+            <div class="profileimage">
+                <img src="{{i.auth.profile.profile_image.url}}" alt="{{i.user}}">
+            </div>
+            <div class="commentbody">
+                {{i.comment.comment_body}}
+                <!-- <div class="hide">
+                   
+                    <button class="" onclick="showcomment()" id='buttonshowmore' style="background-color:rgba(255, 255, 255, 0.493);border:none;cursor:pointer;">showmore....</button>
+                <p class="showmore" id ='showmore'>
+
+                molestias illum commodi quidem impedit architecto suscipit possimus praesentium ab. Numquam veniam id suscipit assumenda. Perspiciatis quaerat tenetur, corporis ipsum labore nesciunt.
+                </p>
+                </div> -->
+            </div> 
+        </div>
+        {%endif%}
+        {%endfor%}
+
+      </div>
+      
+    <div class="bgimage" >      <!-- image -->     </div>
+   <div style="display: flex;justify-content: center;"><div class="title">
+        {{data.post.title}}
+    </div></div>
+    <div class="content">
+        {%for i in body%}
+       <div class="body">
+            <p>
+                
+                
+                
+                {%if i.text%}
+                {% autoescape off %}
+                <pre style="white-space: pre-wrap;       /* Since CSS 2.1 */
+                white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+                white-space: -pre-wrap;      /* Opera 4-6 */
+                white-space: -o-pre-wrap;    /* Opera 7 */
+                word-wrap: break-word; font-family: cursive,sans-serif; font-size: 1rem;">
+                    {{i.content.body|linebreaks}}
+                </pre>
+              
+              {% endautoescape  %}
+                {%endif%}
+                
+                {%if i.image%}
+                
+                <div class="image">
+                    
+
+                  <a href="{{i.url.image.url}}">  <img src="{{i.url.image.url}}" alt="{{i.url.image.url}}"></a>
+                </div>
+                {%endif%}
+            </p> 
+
+        </div>
+        {%endfor%}
+    </div>
+
+  
+
+</body>
+</html>

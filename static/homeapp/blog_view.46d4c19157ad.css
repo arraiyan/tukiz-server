@@ -1,0 +1,290 @@
+*{margin: 0;padding: 0;}
+body{
+     background:rgb(235, 255, 189); 
+    
+    overflow-x: hidden;}
+
+header{background-color: #06caca;
+height: 1.67cm;width: 100vw;
+position:sticky;
+top:0;z-index: 4;
+}
+.navlist{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+
+.navlist .logo{
+    width: max-content;height: max-content;
+    position: relative;padding: 0px;
+    top:0vw; left: 1.5vw;
+    font-family: 'Candal', sans-serif;font-size: 2.5em;font-weight: bold;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital@1&display=swap');
+.navlist .list{
+    display: flex;flex-wrap:wrap;
+    list-style-type: none;
+    position: relative;
+    top:-1.38vw;bottom:0vw ;right: 0vh;left: 10vw;
+    box-sizing: border-box;
+    align-self: center;
+    font-family: 'Asap', sans-serif; font-size: 12pt;
+    
+}.navlist .list li{margin: 2.5vw;padding:3px;border-radius: 3px;}.navlist .list li a{text-decoration: none;color: black;font-weight: bold;}
+.navlist .list li:hover{background-color:hsl(180, 100%, 75%);cursor: pointer;font-size: 13pt;}
+.navlist .log{
+    
+    position: relative;
+    top:0vw;bottom:0vw ;right: 0vh;left: 20%;height: max-content;
+}.loglist{list-style:inside;display: flex;flex-wrap: wrap; list-style-type: none;}.loglist li{
+    margin:1.8vw;font-family: 'Asap', sans-serif;
+        }
+
+
+.content{
+    background-color: rgba(247, 255, 128, 0.527);
+    z-index: 1;
+    height:max-content;width: 55vw;
+    border-radius: 20px;
+    position: relative;top:12vh;left: 20vw;
+    padding-bottom: 4em;padding: 0.5em;
+    padding-top: 1em;
+}
+.bgimage{
+    position: absolute;left: 29vw;top:24vh;
+    z-index: -1;
+    width: 70%;height: 75%;
+    background-color: transparent;
+    background-image: url("icon.92d7517088a0.svg");
+    background-repeat: no-repeat;background-size: contain;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+.content .body{
+    margin: 1em;font-size: 11pt;
+    overflow-x: hidden;
+    font-family:  cursive;
+    font-family: 'Handlee', cursive,monospace;
+}
+@import url('https://fonts.googleapis.com/css2?family=Candal&display=swap');
+.title {
+    width: 40vw;text-align: center;
+    position: relative;
+    top:6.5vh;left: 0vw;
+    --sz : 20pt;
+    font-size: var(--sz);
+    font-family: 'Candal', sans-serif;
+    font-weight: bold;
+}
+.content .image{display: flex;justify-content: center;}
+.content .body .image  img{
+/* width: 34vw;height: 20vw; */
+max-width: 80%;
+height: auto;
+border-radius: 10px;margin: 2em;
+}
+
+.comment{
+ 
+    position: absolute;
+    background-color: rgba(204, 132, 91, 0.459);
+    z-index: 2;
+    width: 18.5vw;height: 38vw;font-size:12pt;
+    left:76.3vw;top: 25vh;overflow-x: hidden;overflow-wrap: normal;overscroll-behavior-block:inherit;
+    overflow-y: auto;border-radius: 8px;padding: 1rem;
+
+}.comment .visitor{width: 80%;display: flex; margin-bottom: 3em;}
+.comment .visitor img{width:2em;height: 2em;border-radius: 100%;}
+.comment .visitor .commentbody{padding: 10px;padding-top:5px;
+border-radius: 10px;height: max-content;width:95%;min-height: 3em;
+background-color: rgba(113, 115, 255, 0.493);
+position: relative;
+top: 1.1rem;
+}
+.comment .author{float: right;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 80%;margin-bottom: 3em;
+}
+.comment .author img{width:2em;height: 2em;border-radius: 100%;}
+.comment .author .commentbody{background-color: rgba(218, 68, 255, 0.527);
+    padding: 10px;padding-top:5px;
+    border-radius: 10px;height: max-content;width:95%;min-height:3em ;
+    position: relative;
+    top: 1.1rem;
+}.comment .author .commentbody .hide .showmore{display: none;}
+.comment .postcomment{
+    background-color:white;
+    border: 1px solid black;
+    position: sticky;top: -3%;
+    z-index: 3;  
+}.comment .postcomment form input{
+    width: 80%;
+    font-family: cursive;
+    font-size: 80%;
+    border:none;background-color:transparent;height: 30pt;
+}.comment .postcomment form button{border:none;background-color: transparent;font-size: 20pt;
+padding-right: 10px;width: 5%;
+}.comment .postcomment form button i{color: orange; cursor:pointer;background-color: transparent;font-size: 80%;}
+.comment .postcomment form button i:hover{color: aqua;}
+
+.sidenav1{width: 18%;height: 3cm; background-color: rgba(255, 255, 255, 0.726);
+    border:3.5px solid black;
+    position: absolute;left:1.5vw;margin-top: 1em;
+    border-radius: 5px;
+}
+
+.sidenav2{
+    background-color: rgba(255, 255, 255, 0.815);
+    position: fixed;left:1.5vw;top:36vh;
+    border:3.5px solid black;
+    width: 15%;height: 55vh;
+    overflow-y: auto;
+    padding-left: 20px;padding-top: 20px;padding-bottom: 20px;
+    border-radius: 8px;
+}
+
+header .navlist .bars{
+    display:none;
+    background-color: transparent;
+    height: max-content;
+    
+}header .navlist .bars i{font-size: 22pt;}
+header .navlist .bars i:hover{color: rgb(252, 252, 252);cursor: pointer;}
+
+
+
+
+ header .navlist .bars #sbar .secondarylist{
+    padding: 2vw;
+    background-color: rgb(41, 41, 41);
+    width:45vw;
+    height: 100vh;position: fixed;left: -35vw;
+ } header .navlist .bars #sbar .secondarylist .slist ul{
+     list-style-position: inside;list-style-type:none;;
+ }header .navlist .bars #sbar .secondarylist .slist ul li{margin:10px;
+    
+    background-color: transparent;padding: 3px;vertical-align:middle;border-radius: 3.5px;
+    width: auto;height: 3em;}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+header .navlist .bars #sbar .secondarylist .slist ul li a{position: relative;
+color: rgb(30, 248, 255);width: 100%;height: 100%;top:0.56em;left:0.8em;
+font-family: 'Ubuntu', sans-serif;font-size: 13.5pt;text-decoration: none;
+}header .navlist .bars #sbar .secondarylist .slist ul li:hover{
+transition-delay: 150ms;background-color: rgb(0, 0, 0);}
+
+header .navlist .bars #sbar .secondarylist .slist ul .a{display: none;}
+
+#sbar{
+    display: none;
+}
+.getstarted{display: none;}
+
+.showcomment{display: none;}
+.showcomment button i{
+    color: rgb(8, 8, 8);
+    /* transform: scaleY(10); */font-size: 30pt;
+}.showcomment button{
+  border: none;height: fit-content;  
+    position: fixed;left: 91vw;top:40vh;
+}.showcomment{position: sticky;top: 80px;}
+
+
+
+.comment .close button i{
+
+}
+
+.comment .close{
+    text-align: right;
+cursor: pointer;display: none;
+    
+}.comment .close button{
+    position: fixed;border:none;border-radius: 3px;  cursor: pointer;right: 13vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 800px) {
+    .comment{font-size: 8pt;font-weight: bold;}
+    .title{font-size: 12pt;}
+ 
+  }
+@media only screen and (max-width: 817px){
+    .loglist{display: none;}
+    header .navlist .bars {display: inline-block;
+            position: absolute;top:0.26cm ;left:85vw ;
+    }
+
+    header .navlist .bars #sbar .secondarylist{
+    z-index: 4;position: absolute;
+    }
+}
+@media only screen and (max-width: 730px){
+    .comment .close{display: initial;}
+    .navlist .logo{
+        font-size: 2em;
+    }
+    .navlist .list{top:0.3cm;}
+    .navlist .list li{padding:1px;margin: 2vw;
+       
+    }.navlist .list{ left: 5vw;}
+    .showcomment{display: initial;}
+    .showcomment button{
+        border: none;height: fit-content;  
+          position: fixed;left: 88vw;top:40vh;z-index: 20;
+        background-color: transparent;cursor: pointer;
+        }
+    .comment{display: none;
+    z-index: 10;
+    position: fixed;top: 1.8cm;width:80vw;left:0;
+    background-color:rgb(230, 183, 157); ;height: 80vh;font-size: 12pt;
+    }
+    .content{
+        width: 85%;
+    }
+    .sidenav2{display: none;}
+    .content{left:5vw;}
+}
+
+@media only screen and (max-width: 375px){
+.navlist .list{
+    display: none;
+}
+header .navlist .bars #sbar .secondarylist .slist ul .a{display: block;}
+.getstarted{display: flex; justify-content: right;}
+
+}
+
+@media only screen and (max-height: 1000px){
+    .sidenav2{height: 350px;}
+
+    @media only screen and (max-width: 770px)
+    {
+        .sidenav2{height:300px;}
+    }
+
+}

@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Stick&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+/* mixin for multiline */
+body {
+  margin: 0;
+  padding: 0;
+  background: #96879d;
+  background: linear-gradient(153deg, #96879d 10%, #66bde1 97%);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+}
+
+header .logo {
+  background: #dfedeb;
+  background: linear-gradient(40deg, #dfedeb 26%, #3fa1a1 100%);
+  padding: 5px 10px;
+  font-family: "Stick", sans-serif;
+}
+
+header .started {
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  background: #b2d8d6;
+  background: linear-gradient(40deg, #b2d8d6 10%, rgba(0, 240, 169, 0.978496) 86%);
+  padding: 5px 10px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+header .started:hover {
+  background: #b2d8d6;
+  background: linear-gradient(273deg, #b2d8d6 10%, rgba(0, 240, 169, 0.978496) 97%);
+}
+
+.later-header .later-header-text {
+  padding: 10px;
+}
+
+.later-header .later-header-text .firstSpan {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.later-header .later-header-text .secondSpan {
+  font-family: "ZCOOL QingKe HuangYou", cursive;
+  font-size: 25px;
+  margin: 14px 0px 5px 0px;
+}
+
+.later-header .later-header-text .lastSpan {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+}
+
+.later-header .icon svg {
+  max-width: 250px;
+  max-height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 5px;
+  margin: 0;
+}
+
+.trending {
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.trending .trending-header {
+  font-family: "Oswald", sans-serif;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.trending .trending-header .line {
+  width: 100px;
+  height: 5px;
+  background-color: black;
+}
+
+.trending .trending-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.trending .trending-article article {
+  max-width: 200px;
+  background: #e6fccc;
+  background: linear-gradient(163deg, #e6fccc 10%, #99bdcd 97%);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 15px 15px 0px 0px;
+}
+
+.trending .trending-article article .article-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.trending .trending-article article .article-header .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.trending .trending-article article .article-header .love {
+  max-height: 10px;
+}
+
+.trending .trending-article article .article-header .love .love-btn {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.trending .trending-article article .article-main {
+  margin-top: 8px;
+}
+
+.allTukiz .allTukiz-header {
+  font-family: "Oswald", sans-serif;
+  padding: 10px;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.allTukiz .allTukiz-header .line {
+  width: 100px;
+  height: 5px;
+  background-color: black;
+}
+
+.allTukiz .allTukiz-articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.allTukiz .allTukiz-articles article {
+  min-height: 200px;
+  max-width: 200px;
+  background: #99bdcd;
+  background: linear-gradient(163deg, #99bdcd 10%, #d5eecc 97%);
+  padding: 10px;
+  border-radius: 18px;
+  margin: 2px;
+}
+
+.allTukiz .allTukiz-articles article .article-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.allTukiz .allTukiz-articles article .article-header .profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.allTukiz .allTukiz-articles article .article-main
+.article-main-header {
+  font-weight: bold;
+  padding-left: 0px;
+  padding: 10px;
+}
+
+.allTukiz .allTukiz-articles article .article-main-header {
+  text-align: center;
+}
+
+.allTukiz .allTukiz-articles article .article-main-content p {
+  overflow: hidden;
+  position: relative;
+  line-height: 18px;
+  max-height: 54px;
+  text-align: center;
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.allTukiz .allTukiz-articles article .article-main-content p:before {
+  content: '.....';
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+}
+
+.allTukiz .allTukiz-articles article .article-main-content p:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+}
+
+.allTukiz .allTukiz-articles article .article-main-content .article-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+.allTukiz .allTukiz-articles article .article-main-content .article-img img {
+  max-width: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: black;
+  margin-top: 30px;
+}
+
+footer section {
+  padding: 8px;
+  color: white;
+  font-family: "Stick", sans-serif;
+}
+/*# sourceMappingURL=style.css.map */

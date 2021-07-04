@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+$logoPadding:5px 10px;
+$logo-font:'Stick', sans-serif;
+$main-font:'Oswald', sans-serif;
+$secondary-font:'ZCOOL QingKe HuangYou', cursive;
+$radius:18px;
+
+@mixin flexHeader{
+    display:flex;
+    justify-content: space-between;
+}
+@mixin line{
+    width:100px;
+    height:5px;
+    background-color:black;
+}
+@mixin titlebar{
+    font-family:$main-font;
+    padding:10px;
+    font-size:25px;
+}
+@mixin articleFlex{
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+/* mixin for multiline */
+@mixin multiLineEllipsis(){
+    overflow: hidden;
+    position: relative;
+    line-height: 18px;
+    max-height: 54px; 
+    text-align: center;
+    margin-right: -1em;
+    padding-right: 1em;
+    &:before {
+      content: '.....';
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 1em;
+      height: 1em;
+      margin-top: 0.2em;
+    }
+  }
+  
+body{
+    margin:0;
+    padding:0;
+    
+    background: rgb(150,135,157);
+    background: linear-gradient(153deg, rgba(150,135,157,1) 10%, rgba(102,189,225,1) 97%);
+}
+header{
+    @include flexHeader();
+    .logo{
+        background: rgb(223,237,235);
+        background: linear-gradient(40deg, rgba(223,237,235,1) 26%, rgba(63,161,161,1) 100%);
+        padding: $logoPadding;
+        font-family: $logo-font;
+    }
+    .started{
+        font-family:$secondary-font;
+        background: rgb(178,216,214);
+        background: linear-gradient(40deg, rgba(178,216,214,1) 10%, rgba(0,240,169,0.9784956218815651) 86%);
+        padding:$logoPadding;
+        border-radius:$radius;
+        border:none;
+        outline:none;
+        
+        &:hover{
+            background: rgb(178,216,214);
+            background: linear-gradient(273deg, rgba(178,216,214,1) 10%, rgba(0,240,169,0.9784956218815651) 97%);
+        }
+        cursor:pointer;
+    }
+    padding:10px;
+}
+
+.later-header{
+    .later-header-text{
+        .firstSpan{
+        font-family:$main-font;
+        font-size:30px;
+        margin-top:30px;
+        }
+        .secondSpan{
+            font-family:$secondary-font;
+            font-size:25px;
+            margin:14px 0px 5px 0px;
+        }
+        .lastSpan{
+            font-family: $main-font;
+            font-size:40px;
+        }
+        padding:10px;
+    }
+    .icon {
+        svg{
+            max-width:250px;
+            max-height:250px;
+            object-fit:cover;
+            padding:5px;
+            margin:0;
+        }
+    }
+}
+
+.trending{
+    padding:10px;
+    .trending-header{
+       @include titlebar();
+        .line{
+           @include line();
+        }
+    }
+    .trending-article{
+        @include articleFlex();
+        
+        article{
+            max-width:200px;
+            // height:80px;
+            background: rgb(230,252,204);
+            background: linear-gradient(163deg, rgba(230,252,204,1) 10%, rgba(153,189,205,1) 97%);
+            border-radius:15px;
+            padding:10px;
+            margin:15px 15px 0px 0px;
+            .article-header{
+                @include flexHeader();
+                
+                .profile{
+                    display:flex;
+                }
+                .love{
+                    max-height:10px;
+                    .love-btn{
+                        background: none;
+                        border:none;
+                        outline:none;
+                    }
+                }  
+            }
+            .article-main{
+                margin-top:8px;
+            }
+        }
+    }   
+    
+    margin-top:20px;
+} 
+
+.allTukiz{
+ 
+
+    .allTukiz-header{
+        @include titlebar();
+        .line{
+            @include line();
+        }
+        margin-bottom:25px;
+    }
+    .allTukiz-articles{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        article{
+            min-height:200px;
+            max-width:200px;
+            background: rgb(153,189,205);
+            background: linear-gradient(163deg, rgba(153,189,205,1) 10%, rgba(213,238,204,1) 97%);
+            padding:10px;
+            border-radius:18px;
+            margin:2px;
+            .article-header{
+            @include flexHeader();
+            .profile{
+                display: flex;
+            }
+            }
+            .article-main
+                .article-main-header{
+                font-weight: bold;
+                padding-left:0px;
+                padding:10px;
+                }
+                .article-main-header{
+                   text-align: center;
+                }
+                .article-main-content{
+                    p{
+                        @include multiLineEllipsis();   
+                    }             
+                    .article-img{
+                    display:flex;
+                    justify-content: center;
+                    padding:10px;
+                    img{
+                        max-width:180px;
+                        object-fit:cover;
+                        border-radius:5px;
+                    }
+                    }
+
+                }
+            }
+        }
+    }   
+footer{
+    display:flex;
+    justify-content: center;
+    background-color:black;
+    margin-top:30px;
+    section{
+        padding:8px;
+        color:white;
+        font-family:$logo-font;
+    }
+}

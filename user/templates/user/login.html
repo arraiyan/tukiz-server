@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" href="{%static 'user/main.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    
+{% load crispy_forms_tags %}
+{%if not user.is_authenticated%}
+<br><br>
+
+
+<main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        <div class="content-section" >
+
+            <form method="POST">
+                {% csrf_token %}
+        
+                <fieldset class="form-group">
+                <legend class="border-bottom mb-4">SIGN IN</legend>
+                {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                <button class="btn-outline-info">
+                LOG IN
+                </button>
+        
+                </div>
+        
+            </form>
+        
+            <div class="border-top pt-3"></div>
+            <small class="text-muted">If you don't have an account then sign up !!!
+            <a href="{%url 'register'%}" class="ml-2">SIGN UP</a><br>
+            <a href="{%url 'home_page'%}" class="ml-2">Back to Home</a>
+            </small>
+        
+        
+        </div>
+        {%endif%}
+       
+      </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
+
